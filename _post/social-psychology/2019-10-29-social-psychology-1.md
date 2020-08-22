@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "社会心理学 8th 第一章"
-date: 2019-10-29 23:49:00
+title: 社会心理学 8th 第一章
 categories: Note
+description:
 keywords: 社科, 心理学
 ---
 
