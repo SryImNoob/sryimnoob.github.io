@@ -2,7 +2,7 @@
 layout: post
 title: 社会心理学 8th 第一章
 categories: Note
-description:
+description: 生活是正着来活,却是倒着去理解.
 keywords: 社科, 心理学
 ---
 
