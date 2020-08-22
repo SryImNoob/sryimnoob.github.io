@@ -8,7 +8,7 @@ menu: 维基
 permalink: /wiki/
 ---
 
-> Too old to die young.
+> Too old to die young
 
 <ul class="listing">
 {% for wiki in site.wiki %}
