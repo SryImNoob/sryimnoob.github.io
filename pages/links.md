@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Links
-description: 没有链接的博客是孤独的
+description: 遇见相似的灵魂
 keywords: 友情链接
 comments: true
 menu: 链接
 permalink: /links/
 ---
 
-> God made relatives. Thank God we can choose our friends.
+> 遇见相似的灵魂
 
 <ul>
 {% for link in site.data.links %}
