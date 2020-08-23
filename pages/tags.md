@@ -1,10 +1,9 @@
 ---
 layout: categories
 title: 标签
-description: 哈哈，你找到了我的文章基因库
-keywords: 分类
+description:
 comments: false
-menu: 分类
+menu: 标签
 permalink: /tags/
 ---
 
