@@ -6,7 +6,7 @@ description:
 tags: Tech Java
 ---
 
-# Effective Java
+# Notes on Effective Java
 
 Contents
   - [x] 1 用静态工厂方法代替构造器
