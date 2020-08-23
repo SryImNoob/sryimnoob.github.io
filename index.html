@@ -16,6 +16,7 @@ function randSentence(words) {
 }
 function randSentenceTimer() {
     document.getElementById('sentence').innerHTML = randSentence(words);
+    window.setTimeout(randSentenceTimer, 5000);
 }
 </script>
 
@@ -59,7 +60,7 @@ function randSentenceTimer() {
                 <span class="meta-info">
                   <span class="octicon octicon-light-bulb"></span>
                   <a id="sentence"></a>
-                  <script type="text/javascript">setInterval(randSentenceTimer, 5000)</script>
+                  <script type="text/javascript">randSentenceTimer()</script>
                 </span>
               </div>
             </div>
