@@ -44,13 +44,15 @@ function randSentence() {
                   <a href="https://github.com/{{ site.github_username }}" target="_blank">{{ site.github_username }}</a>
                 </span>
               </div>
-              <div class="collection-info">                
+              <div class="collection-info">
+                {% if false %}
                 <span class="meta-info">
                   <span class="octicon octicon-light-bulb"></span>
                   {% assign wordsLen = site.data.words | size %}
                   {% assign randInd = "now" | date: "%N" | modulo: wordsLen %}
                   <a>{{ site.data.words[randInd] }}</a>
                 </span>
+                {% endif %}
                 <span class="meta-info">
                   <span class="octicon octicon-light-bulb"></span>
                   <a id="sentence"></a>
