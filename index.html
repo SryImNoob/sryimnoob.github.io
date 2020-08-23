@@ -6,10 +6,8 @@ comments: false
 ---
 <script>
 var words = [
-    {% for word in site.data.words %}
-    "{{ word }}",
-    {% endfor %}
-]
+    "{{ site.data.words | join: "\",\"" }}"
+];
 function randInd() {
     return Math.floor(Math.random() * {{ site.data.words | size }});
 }
