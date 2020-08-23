@@ -15,14 +15,27 @@ function randInd(n) {
 function randSentence(words) {
     return words[randInd(words.length)];
 }
+function showSentenceTimer(id, word, callback) {
+    var ind = 1;
+    function insideTimer() {
+        if(ind == word.length) {
+            window.setTimeout(randSentenceTimer, 2000);
+        }
+        document.getElementById(id).innerHTML = word.substring(0, ind);
+        ind++;
+        window.setTimeout(insideTimer, 1000);
+    };
+    insideTimer();
+}
 function randSentenceTimer() {
     var next_word_ind = randInd(words.length);
     while (cur_word_ind == next_word_ind) {
         next_word_ind = randInd(words.length);
     }
     cur_word_ind = next_word_ind;
-    document.getElementById('sentence').innerHTML = words[cur_word_ind];
-    window.setTimeout(randSentenceTimer, 3000);
+    showSentenceTimer('sentence', words[cur_word_ind], randSentenceTimer);
+    //document.getElementById('sentence').innerHTML = words[cur_word_ind];
+    // window.setTimeout(randSentenceTimer, 3000);
 }
 </script>
 
