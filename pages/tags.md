@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: tags
 title: 标签
 description:
 comments: false
