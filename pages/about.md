@@ -10,7 +10,7 @@ permalink: /about/
 
 在那山的那边海的那边
 
-有一群蓝精灵
+有一群菜菜子
 
 他们活泼又聪明
 
@@ -18,13 +18,13 @@ permalink: /about/
 
 他们自由自在生活在那
 
-绿色的大森林
+绿色的菜花园
 
 他们善良勇敢相互都关心
 
-Ou...可爱的蓝精灵
+Ou...可爱的菜菜子
 
-Ou...可爱的蓝精灵
+Ou...可爱的菜菜子
 
 ## 联系
 
@@ -35,7 +35,7 @@ Ou...可爱的蓝精灵
 </ul>
 
 
-## Skill Keywords
+## Skills
 
 {% for skill in site.data.skills %}
 ### {{ skill.name }}
