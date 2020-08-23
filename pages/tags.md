@@ -1,5 +1,5 @@
 ---
-layout: categories
+layout: page
 title: 标签
 description:
 comments: false
