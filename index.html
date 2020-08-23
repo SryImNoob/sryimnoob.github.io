@@ -18,13 +18,13 @@ function randSentence(words) {
 function showSentenceTimer(id, word, callback) {
     let ind = 1;
     function insideTimer() {
-        if(ind == word.length) {
+        if(ind == word.length + 1) {
             window.setTimeout(callback, 2000);
             return;
         }
         document.getElementById(id).innerHTML = word.substring(0, ind);
         ind++;
-        window.setTimeout(insideTimer, 1000);
+        window.setTimeout(insideTimer, 500);
     }
     insideTimer();
 }
