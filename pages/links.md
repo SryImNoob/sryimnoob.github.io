@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Links
-description: 遇见相似的灵魂
+subtitle: 谁在等风来
 keywords: 友情链接
 comments: true
 menu: 链接
