@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Effective Java
-categories: Note
+categories: Tech
 description: 
 tags: Tech Java
 ---
