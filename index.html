@@ -29,11 +29,12 @@ function showSentenceTimer(word, callback) {
     insideTimer();
 }
 function randSentenceTimer() {
-    var next_word_ind = randInd(words.length);
+    let next_word_ind = randInd(words.length);
     while (cur_word_ind == next_word_ind) {
         next_word_ind = randInd(words.length);
     }
     cur_word_ind = next_word_ind;
+    document.getElementById('sentence').innerHTML = words[cur_word_ind].length.toString(10);
     showSentenceTimer(words[cur_word_ind], randSentenceTimer);
     //document.getElementById('sentence').innerHTML = words[cur_word_ind];
     // window.setTimeout(randSentenceTimer, 3000);
