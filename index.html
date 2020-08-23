@@ -4,6 +4,20 @@ class: home
 css: ['pages/index.css']
 comments: false
 ---
+<script>
+var words = [
+    {% for word in site.data.words %}
+    "{{ word }}",
+    {% endfor %}
+]
+function randInd(n) {
+    return Math.floor(Math.random() * {{ site.data.words | size }});
+}
+function randSentence() {
+    return words[randInd()];
+}
+</script>
+
 
 {% assign assets_base_url = site.url %}
 {% if site.cdn.jsdelivr.enabled %}
@@ -38,6 +52,10 @@ comments: false
                   {% assign wordsLen = site.data.words | size %}
                   {% assign randInd = "now" | date: "%N" | modulo: wordsLen %}
                   <a>{{ site.data.words[randInd] }}</a>
+                </span>
+                <span class="meta-info">
+                  <span class="octicon octicon-light-bulb"></span>
+                  <a><script src="randSentence()"></script></a>
                 </span>
               </div>
             </div>
