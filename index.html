@@ -20,6 +20,7 @@ function showSentenceTimer(word, callback) {
     function insideTimer() {
         if(ind == word.length) {
             window.setTimeout(callback, 2000);
+            return;
         }
         document.getElementById('sentence').innerHTML = ind.toString(10);
         ind++;
