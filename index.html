@@ -15,14 +15,14 @@ function randInd(n) {
 function randSentence(words) {
     return words[randInd(words.length)];
 }
-function showSentenceTimer(word, callback) {
+function showSentenceTimer(id, word, callback) {
     let ind = 1;
     function insideTimer() {
         if(ind == word.length) {
             window.setTimeout(callback, 2000);
             return;
         }
-        document.getElementById('sentence').innerHTML = ind.toString(10);
+        document.getElementById(id).innerHTML = word.substring(0, ind);
         ind++;
         window.setTimeout(insideTimer, 1000);
     }
@@ -34,8 +34,7 @@ function randSentenceTimer() {
         next_word_ind = randInd(words.length);
     }
     cur_word_ind = next_word_ind;
-    document.getElementById('sentence').innerHTML = words[cur_word_ind].length.toString(10);
-    showSentenceTimer(words[cur_word_ind], randSentenceTimer);
+    showSentenceTimer('sentence', words[cur_word_ind], randSentenceTimer);
 }
 </script>
 
