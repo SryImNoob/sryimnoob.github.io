@@ -35,7 +35,7 @@ Ou...可爱的菜菜子
 </ul>
 
 
-## Skills
+## 技能列表
 
 {% for skill in site.data.skills %}
 ### {{ skill.name }}
