@@ -1,6 +1,6 @@
 ---
 layout: tags
-title: 标签
+title: Tags
 description:
 comments: false
 menu: 标签
