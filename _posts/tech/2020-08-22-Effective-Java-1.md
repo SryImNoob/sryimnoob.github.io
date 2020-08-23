@@ -1,5 +1,5 @@
 ---
-layout: mindmap
+layout: post
 title: Effective Java
 categories: Note
 description: 
