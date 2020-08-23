@@ -8,11 +8,11 @@ comments: false
 var words = [
     '{{ site.data.words | join: "','" }}'
 ];
-function randInd() {
-    return Math.floor(Math.random() * {{ site.data.words | size }});
+function randInd(n) {
+    return Math.floor(Math.random() * n);
 }
-function randSentence() {
-    return words[randInd()];
+function randSentence(words) {
+    return words[randInd(words.length)];
 }
 </script>
 
@@ -56,7 +56,7 @@ function randSentence() {
                 <span class="meta-info">
                   <span class="octicon octicon-light-bulb"></span>
                   <a id="sentence"></a>
-                  <script type="text/javascript">document.getElementById('sentence').innerHTML = randSentence()</script>
+                  <script type="text/javascript">document.getElementById('sentence').innerHTML = randSentence(words)</script>
                 </span>
               </div>
             </div>
