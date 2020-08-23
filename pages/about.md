@@ -26,15 +26,6 @@ Ou...可爱的菜菜子
 
 Ou...可爱的菜菜子
 
-## 联系
-
-<ul>
-{% for website in site.data.social %}
-<li>{{website.sitename }}：<a href="{{ website.url }}" target="_blank">@{{ website.name }}</a></li>
-{% endfor %}
-</ul>
-
-
 ## 技能列表
 
 {% for skill in site.data.skills %}
@@ -45,3 +36,11 @@ Ou...可爱的菜菜子
 {% endfor %}
 </div>
 {% endfor %}
+
+## 联系
+
+<ul>
+{% for website in site.data.social %}
+<li>{{website.sitename }}：<a href="{{ website.url }}" target="_blank">@{{ website.name }}</a></li>
+{% endfor %}
+</ul>
