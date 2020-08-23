@@ -56,6 +56,10 @@ navs:
   -
     href: /archives/
     label: 归档
+    
+  -
+    href: /tags/
+    label: 标签
 
 #   -
 #     href: /open-source/
