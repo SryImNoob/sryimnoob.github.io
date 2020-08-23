@@ -36,8 +36,6 @@ function randSentenceTimer() {
     cur_word_ind = next_word_ind;
     document.getElementById('sentence').innerHTML = words[cur_word_ind].length.toString(10);
     showSentenceTimer(words[cur_word_ind], randSentenceTimer);
-    //document.getElementById('sentence').innerHTML = words[cur_word_ind];
-    // window.setTimeout(randSentenceTimer, 3000);
 }
 </script>
 
@@ -81,7 +79,7 @@ function randSentenceTimer() {
                 <span class="meta-info">
                   <span class="octicon octicon-light-bulb"></span>
                   <a id="sentence"></a>
-                  <script type="text/javascript">randSentenceTimer()</script>
+                  <script type="text/javascript">randSentenceTimer();</script>
                 </span>
               </div>
             </div>
