@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-description: 决斗格格巫
+subtitle: 决斗格格巫
 keywords: 
 comments: true
 menu: 关于
