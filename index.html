@@ -21,7 +21,7 @@ function showSentenceTimer(word, callback) {
         if(ind == word.length) {
             window.setTimeout(callback, 2000);
         }
-        document.getElementById('sentence').innerHTML = word.substring(0, ind);
+        document.getElementById('sentence').innerHTML = ind.toString(10);
         ind++;
         window.setTimeout(insideTimer, 1000);
     };
