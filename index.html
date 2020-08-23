@@ -10,7 +10,7 @@ var words = [
     "{{ word }}",
     {% endfor %}
 ]
-function randInd(n) {
+function randInd() {
     return Math.floor(Math.random() * {{ site.data.words | size }});
 }
 function randSentence() {
