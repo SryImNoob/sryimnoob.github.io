@@ -15,13 +15,13 @@ function randInd(n) {
 function randSentence(words) {
     return words[randInd(words.length)];
 }
-function showSentenceTimer(id, word, callback) {
+function showSentenceTimer(word, callback) {
     var ind = 1;
     function insideTimer() {
         if(ind == word.length) {
-            window.setTimeout(randSentenceTimer, 2000);
+            window.setTimeout(callback, 2000);
         }
-        document.getElementById(id).innerHTML = word.substring(0, ind);
+        document.getElementById('sentence').innerHTML = word.substring(0, ind);
         ind++;
         window.setTimeout(insideTimer, 1000);
     };
