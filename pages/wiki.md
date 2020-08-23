@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Wiki
-description: Too old to die young
+subtitle: Too old to die young
 keywords: 维基, Wiki
 comments: false
 menu: 维基
 permalink: /wiki/
 ---
 
-> Too old to die young
+> No time to explain
 
 <ul class="listing">
 {% for wiki in site.wiki %}
