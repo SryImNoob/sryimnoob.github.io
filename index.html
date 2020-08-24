@@ -22,10 +22,11 @@ function showSentenceTimer(id, word, callback) {
     
     function insideTimer() {
         if(ind == word.length + 1) {
+            document.getElementById(id).innerHTML = word;
             window.setTimeout(callback, 2000);
             return;
         }
-        document.getElementById(id).innerHTML = word.substring(0, ind);
+        document.getElementById(id).innerHTML = word.substring(0, ind) + "_";
         ind++;
         delta_spend *= 0.9;
         window.setTimeout(insideTimer, min_spend + delta_spend);
