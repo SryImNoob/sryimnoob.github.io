@@ -12,15 +12,15 @@ description: tmux快捷键手册
 
 ## Windows
 
-'''C-b c''' Create window
+`C-b c` Create window
 
-'''C-b &''' Close current window
+`C-b &` Close current window
 
 
-'''C-b p''' Previous window
+`C-b p` Previous window
 
-'''C-b n''' Next window
+`C-b n` Next window
 
-'''C-b 0...9''' Select window by number
+`C-b 0...9` Select window by number
 
 
