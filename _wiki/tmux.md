@@ -1,6 +1,6 @@
 ---
 layout: wiki
-title: tmux
+title: Tmux Cheatsheet
 categories: Cheatsheet
 description: tmux快捷键手册
 ---
@@ -8,7 +8,7 @@ description: tmux快捷键手册
 官方wiki:
 [https://github.com/tmux/tmux/wiki](https://github.com/tmux/tmux/wiki)
 
-# tmux cheatsheet
+# Tmux Cheatsheet
 
 ## Windows
 
