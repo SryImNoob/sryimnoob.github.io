@@ -29,12 +29,12 @@ Ou...可爱的菜菜子
 ## 技能列表
 
 {% for skill in site.data.skills %}
-### {{ skill.name }}
-<div class="btn-inline">
-{% for keyword in skill.keywords %}
-<button class="btn btn-outline" type="button">{{ keyword }}</button>
-{% endfor %}
-</div>
+  ### {{ skill.name }}
+  <div class="btn-inline">
+  {% for keyword in skill.keywords %}
+    <button class="btn btn-outline" type="button">{{ keyword }}</button>
+  {% endfor %}
+  </div>
 {% endfor %}
 
 ## 联系
