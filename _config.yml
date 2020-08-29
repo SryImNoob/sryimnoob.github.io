@@ -57,6 +57,10 @@ navs:
     href: /tags/
     label: 标签
 
+  -
+    href: /series/
+    label: 系列
+
 #   -
 #     href: /archives/
 #     label: 归档
