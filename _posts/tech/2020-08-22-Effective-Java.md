@@ -102,4 +102,5 @@ Contents
 
 Notes:
   - Item 45 and Item 47: [Cartesian Product](https://freopen.com/language/2020/08/11/Cartesian-Product.html)
+  - Item 79: CopyOnWriteArrayList -> Persistent data structures -> Finger Tree (待写)
   
