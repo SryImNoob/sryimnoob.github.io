@@ -1,6 +1,6 @@
 ---
 layout: wiki
-title: 待办列表
+title: 菜菜子的待办箱
 categories: Idea
 description: 新世纪躺平计划
 topmost: true
