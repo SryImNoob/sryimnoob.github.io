@@ -13,3 +13,5 @@ topmost: true
 [Purely Functional Data Structures](https://www.cs.cmu.edu/~rwh/theses/okasaki.pdf)
 
 [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
+
+[The Theory of Quantum Information](https://cs.uwaterloo.ca/~watrous/TQI/)
