@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 生活碎碎念 第0篇: 图书馆的老爷爷
-categories: 碎碎念
-description:Perhaps that's been the story of life.
-tags: 生活 碎碎念
+title: 生活碎碎念 0, 图书馆的老爷爷
+categories: Life
+description: Perhaps that's been the story of life.
+tags: Life Zzz
 series: 碎碎念系列
 ---
 
