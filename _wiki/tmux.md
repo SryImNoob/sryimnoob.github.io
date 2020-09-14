@@ -23,4 +23,9 @@ description: tmux快捷键手册
 
 `C-b 0...9` Select window by number
 
+## Copy mode
 
+`C-b [` Enter copy mode to copy text or view the history.
+
+`C-s` then type the string to search for and press `Enter`.
+  - Press `n` to next.
