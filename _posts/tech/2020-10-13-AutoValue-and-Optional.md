@@ -21,7 +21,7 @@ java.util.Optional: [https://docs.oracle.com/javase/8/docs/api/java/util/Optiona
   - 使用Optional.
 
 **Nullable**
-```
+```java
 @AutoValue
 public abstract class Foo {
   public static Foo create(@Nullable Bar bar) {
@@ -33,7 +33,7 @@ public abstract class Foo {
 ```
   
 **Optional**
-```
+```java
 @AutoValue
 public abstract class Animal {
   public abstract Optional<String> name();
@@ -67,7 +67,7 @@ public abstract class Animal {
 
 这几天看书才明白这个问题, java的Optional在设计的时候, 认为Optional应该只用在接口设计上, 而不是将fields声明称Optional类型. 所以说,java官方对Nullable fields的设计想法是这样的:
 
-```
+```java
 public class Foo {
   @Nullable private Bar bar;
   public Optional<Bar> bar();
