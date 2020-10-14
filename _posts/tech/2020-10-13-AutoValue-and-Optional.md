@@ -2,13 +2,13 @@
 layout: post
 title: AutoValue和Optional小记
 categories: Tech
-description: 
+description: Modern Java in Action, 2nd Edition, Chapter 11
 tags: Tech Java
 ---
 
 # AutoValue和Optional小记
 
-划水一篇小记
+读Modern Java in Action, 2nd Edition, 划水一篇小记
 
 AutoValue User Guide: [https://github.com/google/auto/blob/master/value/userguide/builders-howto.md](https://github.com/google/auto/blob/master/value/userguide/builders-howto.md)
 
