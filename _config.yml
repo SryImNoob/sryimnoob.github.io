@@ -2,10 +2,9 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://sryimnoob.github.io
+url: "https://sryimnoob.com"
 date_format: "ordinal"
-title: 菜菜子的菜花园
-subtitle: "菜菜子之歌"
+title: "菜菜子之歌"
 description: ""
 keywords: 
 timezone: Asia/Shanghai
