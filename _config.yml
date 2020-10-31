@@ -132,8 +132,8 @@ gitment:
 gitalk:
     owner: SryImNoob
     repo: blog-comments
-    clientID: 87425a3cb9687714cbf9
-    clientSecret: 2d4f49b1e2e0199d597702859559fb533f8b549c
+    clientID: 4edcee46375fec9e11fa
+    clientSecret: eb3fcfbe478cb251efd3865fe0e1028fc977f03a 
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
