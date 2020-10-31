@@ -29,8 +29,8 @@ Given two arrays $A[N]$ and $B[N]$, return the number of $Z[N]$, such that $Z[0]
 所以我们设$dp[i][k](x) = f_{ik}(x)$, 即每个状态其实是一个多项式, 然后大概的状态转移方程(详情请看代码):
 
 $$
-left[i] = s.get_index(A[i]) \\
-right[i] = s.get_index(B[i]) \\
+left[i] = getIndex(s, A[i]) \\
+right[i] = getIndex(s, B[i]) \\
 dp[i][k](x) = \sum_{j=max(k,left[i+1])}{right[i+1]}(\sum_{x'=max(x,s[j]])}^{s[j+1]} dp[i+1][j](x')) 
 $$
 
