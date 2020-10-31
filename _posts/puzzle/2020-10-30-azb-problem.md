@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 一个暴力的动态规划问题
+title: 一道暴力的动态规划问题
 categories: Puzzle
 description: A brute-force dynamic programming problem
 tags: Algorithm Interview
 ---
 
-# 一个暴力的动态规划问题
+# 一道暴力的动态规划问题
 
 来源于朋友问的一个题目,相比之下,这篇post的题目更方便写代码一点. 虽然整体思路是一样的,但原题实现起来会比较麻烦,所以我化简了一下. 这也体现出作业题和面试题一个不同之处.
 
