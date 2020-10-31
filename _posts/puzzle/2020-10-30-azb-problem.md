@@ -54,7 +54,7 @@ $$
 
 方法很简单,直接暴力使用高斯消元求$sum(i,k)$的各项系数.
 
-代码实现: [https://github.com/SryImNoob/ProblemSet/blob/master/homework/AZB_Solver.ipynb]
+代码实现: [AZB_Solver.ipynb]
 
 ## 后记
 
@@ -62,4 +62,4 @@ $$
 
 [Sums of powers]: https://en.wikipedia.org/wiki/Sums_of_powers
 
-[https://github.com/SryImNoob/ProblemSet/blob/master/homework/AZB_Solver.ipynb]: https://github.com/SryImNoob/ProblemSet/blob/master/homework/AZB_Solver.ipynb
+[AZB_Solver.ipynb]: https://github.com/SryImNoob/ProblemSet/blob/master/homework/AZB_Solver.ipynb
