@@ -48,9 +48,9 @@ $$
 
 首先N个值对应的多项式是N+1次的,算上常数项,参数向量的长度=N+2.
 
-其次,需要快速的多项式求前i项合.即给一个多项式数列$f(i)$,快速求出$\sum_{x=1}{i} f(x)$.
+其次,需要快速的多项式求前i项合.即给一个多项式数列$f(i)$,快速求出$\sum_{x=1}^{i} f(x)$.
 
-求多项式前i项合,又可以分解成求[Sums of powers](https://en.wikipedia.org/wiki/Sums_of_powers), 即$sum(i, k) = \sum_{x=1}{i} x^k$.
+求多项式前i项合,又可以分解成求[Sums of powers](https://en.wikipedia.org/wiki/Sums_of_powers), 即$sum(i, k) = \sum_{x=1}^{i} x^k$.
 
 我们都学过$sum(n, 1) = n(n + 1)/2$, $sum(n, 2) = n(n + 1)(2n+1)/6$,但对于更大的k,应该怎么办?
 
