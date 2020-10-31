@@ -5,6 +5,7 @@ baseurl:
 url: "https://sryimnoob.com"
 date_format: "ordinal"
 title: "菜菜子之歌"
+subtitle: "Stay Hungry, Stay Foolish."
 description: ""
 keywords: 
 timezone: Asia/Shanghai
@@ -132,8 +133,8 @@ gitment:
 gitalk:
     owner: SryImNoob
     repo: blog-comments
-    clientID: 4edcee46375fec9e11fa
-    clientSecret: eb3fcfbe478cb251efd3865fe0e1028fc977f03a 
+    clientID: b49d0ca946b2d6b4e028
+    clientSecret: f15ea2041fc8badd00ddd4f157e82ea6f84ae125 
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
