@@ -31,7 +31,7 @@ Given two arrays $A[N]$ and $B[N]$, return the number of $Z[N]$, such that $Z[0]
 $$
 left[i] = getIndex(s, A[i]) \\
 right[i] = getIndex(s, B[i]) \\
-dp[i][k](x) = \sum_{j=max(k,left[i+1])}{right[i+1]}(\sum_{x'=max(x,s[j]])}^{s[j+1]} dp[i+1][j](x')) 
+dp[i][k](x) = \sum_{j=max(k,left[i+1])}^{right[i+1]} (\sum_{x'=max(x,s[j]])}^{s[j+1]} dp[i+1][j](x')) 
 $$
 
 然后就没了. 从作业题的角度来讲,这道题就解决了. 因为求多项式数列的前i项和的复杂度,只和多项式的系数个数相关. 实现方法如下.
