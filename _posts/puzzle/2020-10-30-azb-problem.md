@@ -24,7 +24,11 @@ Given two arrays $A[N]$ and $B[N]$, return the number of $Z[N]$, such that $Z[0]
 
 既然要求多项式解法,其实也暗示了算法的框架就是离散化DP.
 
-假设离散化之后我们得到一个数组`s[m] = sorted(list(set(A+B)))`, 我们可以观察到Z[i]取值在$[s[k],s[k+1])$之间时,Z[i+1:N]的所有可能性的数量是基于Z[i]的一个多项式$f_{ik}(x), x \in [s[k], s[k+1])$.
+假设离散化之后我们得到一个数组`s[m] = sorted(list(set(A+B)))`, 我们可以观察到Z[i]取值在$[s[k],s[k+1])$之间时,Z[i+1:N]的所有可能性的数量是基于Z[i]的一个多项式
+
+$$
+f_{ik}(x), x \in [s[k], s[k+1])
+$$
 
 所以我们设$dp[i][k](x) = f_{ik}(x)$, 即每个状态其实是一个多项式, 然后大概的状态转移方程(详情请看代码):
 
