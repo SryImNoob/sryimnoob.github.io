@@ -62,4 +62,4 @@ $$
 
 [Sums of powers]: https://en.wikipedia.org/wiki/Sums_of_powers
 
-[https://github.com/SryImNoob/ProblemSet/blob/master/homework/AZB_Solver.ipynb]: (https://github.com/SryImNoob/ProblemSet/blob/master/homework/AZB_Solver.ipynb)
+[https://github.com/SryImNoob/ProblemSet/blob/master/homework/AZB_Solver.ipynb]: https://github.com/SryImNoob/ProblemSet/blob/master/homework/AZB_Solver.ipynb
