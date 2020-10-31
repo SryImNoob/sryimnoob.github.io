@@ -79,6 +79,16 @@
     {% if site.url contains 'mazhuang.org' %}
     <script data-ad-client="ca-pub-7093222719567591" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     {% endif %}
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+          displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+          skipTags: ["script","noscript","style","textarea","pre"],
+          processEscapes: true
+        }
+    });
+    </script>
 </head>
 <body class="{{ page.class }}" data-mz="{{ page.class }}">
     <header class="site-header">
