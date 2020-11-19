@@ -16,7 +16,7 @@ description: tmux快捷键手册
 
 ```
 $ tmux
-$ tmux new -s name
+$ tmux new -s mysession
 ```
 
 ```
@@ -28,8 +28,6 @@ $ tmux new -s name
 ```
 tmux ls
 ```
-
-`C-b s`
 
 **Attach to last session**
 
@@ -49,19 +47,15 @@ $ tmux attach -t mysession
 $ tmux attach-session -t mysession
 ```
 
-**Move to previous(next) session**
+**Tmux commands**
 
-`C-b (`
+`C-b (` Move to previous session
 
-`C-b )`
+`C-b )` Move to next session
 
-**Rename session**
+`C-b $` Rename session
 
-`C-b $`
-
-
-
-
+`C-b s` Show all sessions
 
 
 ## Windows
