@@ -22,15 +22,16 @@ tags: Tech Cpp
  
 [Cartesian Product 2](https://freopen.com/lang/2020/11/19/Cartesian-Product-2.html)
 
-# Implementation
-
-写完Cartesian Product 2之后, 写了第一版, 就是简单的使用宏把CP2中的switch自动化定义. 使用宏定义了自己的控制流语句IF,WHILE, 这样可以把所有的控制流自动拆解成对应case.
+## Implementation
 
 [**Version 1**](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/macro_yield.cpp)
 
-尝试把宏定义的WHILE用Cpp原生的while替换, 然后发现可以编译, 并且运行正确. 这样就可以省去自己定义IF和WHILE, 并且通过`__line__`可以免去需要提前声明YIELD语句.
+写完Cartesian Product 2之后, 写了第一版, 就是简单的使用宏把CP2中的switch自动化定义. 使用宏定义了自己的控制流语句IF,WHILE, 这样可以把所有的控制流自动拆解成对应case.
+
 
 [**Version 2**](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/macro_v2.cpp)
+
+尝试把宏定义的WHILE用Cpp原生的while替换, 然后发现可以编译, 并且运行正确. 这样就可以省去自己定义IF和WHILE, 并且通过`__line__`可以免去需要提前声明YIELD语句.
 
 ## LeetCode
 
