@@ -8,7 +8,7 @@ tags: Tech Cpp
 
 # Coroutine in Cpp
 
-代码都写完了，但没空写一篇总结, 先写个标题占坑.
+代码都写完了, 但没空写一篇总结, 先写个标题占坑.
 
 ## History
 
@@ -16,7 +16,7 @@ tags: Tech Cpp
 
 [Coroutines in C](https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)
 
-自己以前和和这个问题相关的博客, 这两篇更像解题草稿, 写了很多解决思路, 最终决定使用switch+宏来实现. 本篇的宏只是众多解决方案之一, 并没有特别对本篇的宏写太多解释:
+自己以前和这个问题相关的博客, 这两篇更像解题草稿, 写了很多解决思路, 最终决定使用switch+宏来实现. 本篇的宏只是众多解决方案之一, 并没有特别对本篇的宏写太多解释:
 
 [Cartesian Product](https://freopen.com/lang/2020/08/11/Cartesian-Product.html)
  
@@ -31,7 +31,7 @@ tags: Tech Cpp
 
 [**Version 2**](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/macro_v2.cpp)
 
-尝试把宏定义的WHILE用Cpp原生的while替换, 然后发现可以编译, 并且运行正确. 这样就可以省去自己定义IF和WHILE, 并且通过`__line__`可以免去需要提前声明YIELD语句.
+尝试把宏定义的WHILE替换为Cpp原生的while, 然后发现居然可以编译, 并且运行正确. 这样就可以省去自己定义IF和WHILE, 并且通过`__line__`来免去提前声明YIELD语句.
 
 ## LeetCode
 
@@ -43,4 +43,5 @@ tags: Tech Cpp
   - LC 604
   - LC 1286
   
-我Leetcode刷过的题目都在这, 自己扒翻一下吧: [Solutions](https://github.com/FiveEyes/ProblemSet/tree/master/LeetCode)
+我Leetcode刷过的题目都在这, 自己扒翻一下吧: 
+  - [Leetcode Solutions](https://github.com/FiveEyes/ProblemSet/tree/master/LeetCode)
