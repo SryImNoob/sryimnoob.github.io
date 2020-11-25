@@ -2,7 +2,7 @@
 layout: post
 title: Coroutine in Cpp
 categories: Tech
-description: 
+description: 两个神奇的C语言特性, Switch + Macro, 实现Yield.
 tags: Tech Cpp
 ---
 
