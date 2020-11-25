@@ -41,3 +41,5 @@ tags: Tech Cpp
   - LC 341
   - LC 604
   - LC 1286
+  
+我Leetcode刷过的题目都在这, 自己扒翻一下吧: [Solutions](https://github.com/FiveEyes/ProblemSet/tree/master/LeetCode)
