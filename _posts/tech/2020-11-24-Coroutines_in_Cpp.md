@@ -108,7 +108,7 @@ case 6: { // the conroutine is finished. }
 
 ## Design and Implementation, V1
 
-### [Source code, Version One](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/macro_yield.cpp)
+[**Source code, Version One**](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/macro_yield.cpp)
 
 写完Cartesian Product 2之后,写了第一版,简单的使用宏把CP2中的switch自动化定义.使用宏定义了自己的控制流语句IF,WHILE,这样可以把所有的控制流自动拆解成对应case.
 
@@ -296,7 +296,7 @@ bool f(int& output) {
 
 ## Design and Implementation, V2
 
-### [Source code, Version Two](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/macro_v2.cpp)
+[**Source code, Version Two**](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/macro_v2.cpp)
 
 尝试把宏定义的WHILE替换为Cpp原生的while, 然后发现居然可以编译, 并且运行正确. 这样就可以省去自己定义IF和WHILE, 并且通过`__line__`来免去提前声明YIELD语句.
 
