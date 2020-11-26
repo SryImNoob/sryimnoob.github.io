@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Coroutine in Cpp
+title: Coroutines in Cpp
 categories: Tech
 description: 两个神奇的C语言特性, Switch + Macro, 实现Yield.
 tags: Tech Cpp
 ---
 
-# Coroutine in Cpp
+# Coroutines in Cpp
 
 代码都写完了, 但没空写一篇总结, 先写个标题占坑.
 
