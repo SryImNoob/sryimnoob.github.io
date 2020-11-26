@@ -18,7 +18,7 @@ tags: Tech Cpp
 
 [**Cartesian Product**](https://freopen.com/lang/2020/08/11/Cartesian-Product.html): 这篇主要介绍了一下笛卡尔积问题,顺便炫了一下Cpp的可变模板参数(variadic templates).
  
-[**Cartesian Product 2**](https://freopen.com/lang/2020/11/19/Cartesian-Product-2.html): 这篇写了一下如何从特制的Generator到通用的Generator实现, 即如何将使用Python yield写的generatro转化成Cpp代码.
+[**Cartesian Product 2**](https://freopen.com/lang/2020/11/19/Cartesian-Product-2.html): 这篇写了一下如何从特制的Generator到通用的Generator实现, 即如何将使用Python yield写的generator翻译成Cpp代码.
 
 
 ## Solution based on switch statement
@@ -42,19 +42,20 @@ f() -> error: no next element, it's done.
 ```
 
 当我们第四次调用f()的时候,我们需要恢复到上次执行时的环境.所谓的环境,具体指的有两件事:
-  - local variables: i需要恢复成为2.
-  - 程序计数器: 再次调用时,我们将从yield的下一行开始执行, 即第4行 i++.
+  - **local variables**: $i$需要恢复成为2.
+  - **程序计数器 PC**: 再次调用时,我们将从yield的下一行开始执行, 即第4行 i++.
 
 
 如何做到恢复局部变量:
   - 可以将所有变量都设成static的,调用f()就不会再次初始化.
   - 将局部变量打包成一个struct, 调用f()时,将它的局部变量传递给它.
+
 简而言之,需要将局部变量的位置从栈上移动到堆上.
 
 如何控制程序计数器:
-  - 自己维护一个计数器状态,并将其和局部变量保存在一起,程序根据计数器状态,跳转到对应代码位置.
+  - 自己维护一个计数器状态,并将其和局部变量保存在一起,函数根据计数器状态,跳转到对应代码位置.
 
-把这两个方法结合在一起,就产生了第一版的大框架,使用state来保存程序状态,然后将所有的控制流指令进行拆解,即if和while都拆成不同的代码块分布在case语句中:
+把这两个方法结合在一起,就产生了第一版的大框架,使用一个`int state`变量来保存程序状态,然后使用`switch(state)`跳转到对应的case. 这里我们需要将所有的控制流指令拆解成不同的case块,即if和while都拆成不同的代码块分布在case语句中:
 
 if语句的拆解:
 ```
@@ -109,7 +110,9 @@ case 6: { // the conroutine is finished. }
 
 ### [Source code, Version One](https://github.com/FiveEyes/FiveEyes.github.io/blob/master/assets/code/cpp/macro_yield.cpp)
 
-写完Cartesian Product 2之后, 写了第一版,就是简单的使用宏把CP2中的switch自动化定义. 使用宏定义了自己的控制流语句IF,WHILE, 这样可以把所有的控制流自动拆解成对应case.
+写完Cartesian Product 2之后,写了第一版,简单的使用宏把CP2中的switch自动化定义.使用宏定义了自己的控制流语句IF,WHILE,这样可以把所有的控制流自动拆解成对应case.
+
+接下来,我们先介绍一下接口的设计,然后在说明如何使用宏来自动化定义switch和case.
 
 ### Interface design
 
