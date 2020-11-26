@@ -33,15 +33,42 @@ tags: Tech Cpp
 
 尝试把宏定义的WHILE替换为Cpp原生的while, 然后发现居然可以编译, 并且运行正确. 这样就可以省去自己定义IF和WHILE, 并且通过`__line__`来免去提前声明YIELD语句.
 
-## LeetCode
+## Leetcode
 
 写完第二版之后, 拿它把Leetcode上Iterator的题目都刷了...还挺好用的.
 题目列表:
-  - LC 173
-  - LC 281
-  - LC 341
-  - LC 604
-  - LC 1286
+
+### [LC 173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)
+
+可以说是一个标准例题了... 要求实现一个二叉树的中序迭代器.
+```
+class Helper : public Generator<int> {
+public:
+    TreeNode * root;
+    shared_ptr<Helper> iter;
+    Helper(TreeNode * _root) : root(_root) {}
+    bool next(int &output) {
+        PRG_BEG
+        if(root == NULL) RETURN();
+        iter = make_shared<Helper>(root->left);
+        YIELD_ALL(iter,output);
+        output = root->val;
+        YIELD();
+        iter = make_shared<Helper>(root->right);
+        YIELD_ALL(iter,output);
+        PRG_END
+    }
+};
+```
+代码写出来和深搜遍历打印一致,需要打印的地方替换成YIELD即可.
+
+### LC 281
+
+### LC 341
+
+### LC 604
+
+### LC 1286
   
 我Leetcode刷过的题目都在这, 自己扒翻一下吧: 
   - [Leetcode Solutions](https://github.com/FiveEyes/ProblemSet/tree/master/LeetCode)
