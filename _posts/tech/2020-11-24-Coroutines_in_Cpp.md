@@ -10,7 +10,7 @@ tags: Tech Cpp
 
 代码都写完了, 但没空写一篇总结, 先写个标题占坑.
 
-## History
+## Background
 
 写完发现自己重新发明了一个轮子... 这里有一份很好的总结: [**Coroutines in C**](https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)
 
