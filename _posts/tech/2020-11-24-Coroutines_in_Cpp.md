@@ -14,13 +14,13 @@ tags: Tech Cpp
 
 写完发现自己重新发明了一个轮子... 这里有一份很好的总结:
 
-[Coroutines in C](https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)
+[**Coroutines in C**](https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)
 
 之前自己写的和这个问题相关的文章,但之前这两篇更像解题草稿,写了很多解决思路,最终决定使用switch+macro来实现.
 
 [**Cartesian Product**](https://freopen.com/lang/2020/08/11/Cartesian-Product.html): 这篇主要介绍了一下笛卡尔积问题,顺便炫了一下Cpp的可变模板参数(variadic templates).
  
-[Cartesian Product 2](https://freopen.com/lang/2020/11/19/Cartesian-Product-2.html): 这篇写了一下如何从特制的Generator到通用的Generator实现, 即如何将使用Python yield写的generatro转化成Cpp代码.
+[**Cartesian Product 2**](https://freopen.com/lang/2020/11/19/Cartesian-Product-2.html): 这篇写了一下如何从特制的Generator到通用的Generator实现, 即如何将使用Python yield写的generatro转化成Cpp代码.
 
 
 ## Solution based on switch statement
