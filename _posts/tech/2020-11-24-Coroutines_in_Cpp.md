@@ -12,9 +12,7 @@ tags: Tech Cpp
 
 ## History
 
-写完发现自己重新发明了一个轮子... 这里有一份很好的总结:
-
-[**Coroutines in C**](https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)
+写完发现自己重新发明了一个轮子... 这里有一份很好的总结: [**Coroutines in C**](https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)
 
 之前自己写的和这个问题相关的文章,但之前这两篇更像解题草稿,写了很多解决思路,最终决定使用switch+macro来实现.
 
