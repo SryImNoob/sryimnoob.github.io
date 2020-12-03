@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 水一题: 随机切蛋糕
+title: "水一篇: 随机切蛋糕"
 categories: Puzzle
 description: Is it fair?
 tags: Math Interview
