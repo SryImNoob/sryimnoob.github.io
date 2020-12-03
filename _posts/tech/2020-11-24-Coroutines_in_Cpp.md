@@ -24,7 +24,7 @@ tags: Tech Cpp
 ## Solution based on switch statement
 
 首先总结一下yield的语义.
-```
+```cpp
 0: int f() {
 1:  int i = 0;
 2:  while(i < 3) {
@@ -138,7 +138,7 @@ public:
 
 这个抽象的Generator类将next和hasNext压缩成一个函数,`bool next(T& output)`:
   - 如果Generator已经终止,则返回false.
-  - 如果Generator还有下一个元素,则通过引用参数output来返回下一个元素.
+  - 如果Generator还有下一个元素,则通过引用参数output来返回下一个元素,同时函数返回true.
 
 使用样例代码:
 ```
@@ -277,7 +277,7 @@ bool f(int& output) {
   
   PRG_BEG
   flag = true;
-  IF(flag, {
+  IF(if1, flag, {
     flag = false;
     output = 1;
     YIELD(y1);
