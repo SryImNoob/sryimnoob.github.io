@@ -37,7 +37,7 @@ tags: Tech Cpp
 f() -> 0
 f() -> 1
 f() -> 2
-f() -> error: no next element, it's done.
+f() -> error: no next element, it was done.
 ...
 ```
 
@@ -58,7 +58,7 @@ f() -> error: no next element, it's done.
 把这两个方法结合在一起,就产生了第一版的大框架,使用一个`int state`变量来保存程序状态,然后使用`switch(state)`跳转到对应的case. 这里我们需要将所有的控制流指令拆解成不同的case块,即if和while都拆成不同的代码块分布在case语句中:
 
 if语句的拆解:
-```
+```cpp
 if(c) { a } else { b }
 
 switch(state) {
@@ -70,7 +70,7 @@ case if_end: {}
 ```
 
 while语句的拆解:
-```
+```cpp
 while(c) { a }
 
 switch(state) {
@@ -81,7 +81,7 @@ case loop_end: {}
 ```
 
 yield语句的拆解:
-```
+```cpp
 yield x;
 
 switch(state) {
@@ -91,7 +91,7 @@ case yield_end: {}
 ```
 
 刚刚那段程序的拆解结果如下:
-```
+```cpp
 int f(int &i, int &state) {
 while(1) {
 switch(state) {
@@ -122,7 +122,7 @@ case 6: { // the conroutine is finished. }
   - 如何对Coroutine传参和以及Coroutine如何返回值.(Generator是不需要传参的)
   
 最终选定的方案如下:
-```
+```cpp
 template<typename T>
 class Generator : public std::enable_shared_from_this<Generator<T>> {
 public:
@@ -141,14 +141,14 @@ public:
   - 如果Generator还有下一个元素,则通过引用参数output来返回下一个元素,同时函数返回true.
 
 使用样例代码:
-```
+```cpp
 Generator<int> gen;
 int output;
 while(gen.next(output)) cout << output << endl;
 ```
 
 这个Generator也很方便转变成传统的Iterator,拆解成`T next()`和`bool hasNext()`,这个Adapter如下:
-```
+```cpp
 template<typename T>
 class GenIter : public std::enable_shared_from_this<GenIter<T>> {
 public:
@@ -176,7 +176,7 @@ public:
 ### Macro Implementation
 
 接口设计完之后,还需要解决如何自动把control flow拆解成switch的case. 这就轮到Macro登场了.
-```
+```cpp
 bool f(int& output) {
   bool flag = true;
   if(flag) {
@@ -191,7 +191,7 @@ bool f(int& output) {
 ```
 
 首先设计一下自动化switch之后的样子:
-```
+```cpp
 // class members
 int state = 0;
 int flag;
@@ -223,7 +223,7 @@ bool f(int& output) {
 
 设计完毕之后只需要将对应的名字生成规则,和case生成规则写成macro即可. 代码如下:
 
-```
+```cpp
 #define BEG(name) BEG_##name
 #define ELSE(name) ELSE_##name
 #define END(name) END_##name
@@ -269,7 +269,7 @@ case END(name): {}
 ```
 
 使用上面的宏重写刚刚的代码
-```
+```cpp
 bool f(int& output) {
   DEC_BEG
     DEC_IF(if1), DEC_YIELD(y1), DEC_YIELD(y2)
@@ -305,7 +305,7 @@ bool f(int& output) {
   - 因为去掉了DEC环境,那么使用YIELD的时候,只需要`YIELD()`即可.
   
 刚刚的代码,使用第二版重写如下:
-```
+```cpp
 bool f(int& output) {
   PRG_BEG
   flag = true;
@@ -324,7 +324,7 @@ bool f(int& output) {
 是不是感到了黑科技的力量, WOW! AWESOME! AMAZING!
 
 其实把宏展开之后的代码,一般人是不敢写的...展开后如下
-```
+```cpp
 bool f(int& output) {
   switch(state) {
   case 0:
@@ -359,7 +359,7 @@ bool f(int& output) {
 
 ## Examples
 
-```
+```cpp
 testFibGen(); 
 testBetterHanoiGen();
 testPrimeGen();
@@ -381,7 +381,19 @@ testGuessYourNumber();
 ### [LC 173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)
 
 可以说是一个标准例题了... 要求实现一个二叉树的中序迭代器.
-```
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+ 
 class Helper : public Generator<int> {
 public:
     TreeNode * root;
@@ -403,18 +415,7 @@ public:
 代码写出来和深搜遍历打印一致,需要打印的地方替换成YIELD即可. 
 
 然后使用之前定义的`GenIter`将它转化成具有hasNext函数的Iterator.
-```
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
+```cpp
 class BSTIterator {
 public:
     GenIter<int> iter;
