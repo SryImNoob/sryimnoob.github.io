@@ -378,7 +378,9 @@ testGuessYourNumber();
 
 题目列表:
 
-### [LC 173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)
+### LC 173. Binary Search Tree Iterator
+
+[LeetCode 173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)
 
 可以说是一个标准例题了... 要求实现一个二叉树的中序迭代器.
 ```cpp
