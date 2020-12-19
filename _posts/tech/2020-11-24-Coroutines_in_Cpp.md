@@ -20,8 +20,7 @@ tags: Tech Cpp
  
 [**Cartesian Product 2**](https://freopen.com/lang/2020/11/19/Cartesian-Product-2.html): 这篇写了一下如何从特制的Generator到通用的Generator实现, 即如何将使用Python yield写的generator翻译成Cpp代码.
 
-
-## Solution based on switch statement
+### Yield and Example
 
 首先总结一下yield的语义.
 ```cpp
@@ -41,7 +40,47 @@ f() -> error: no next element, it was done.
 ...
 ```
 
-当我们第四次调用f()的时候,我们需要恢复到上次执行时的环境.所谓的环境,具体指的有两件事:
+这篇博客的最终目的就是要在Cpp中实现Yield语句, 我们先展示一下最终效果
+
+```
+class F : public Generator<int> {
+public:
+    int i;
+    F() : i(0) {}
+    bool next(int &output) {
+        PRG_BEG
+        i = 0;
+        while(i < 3) {
+            output = i;
+            YIELD();
+            i++;
+        }
+        PRG_END
+    }
+};
+
+int main() {
+    F f;
+    int output;
+    while(f.next(output)) {
+        cout << output << endl;
+    }
+    return 0;
+}
+```
+
+这段程序最终会输出
+```
+0
+1
+2
+```
+
+## Solution based on switch statement
+
+首先我们观察一下调用含有yield语句的函数时,具体做了哪些事情.
+
+调用f()时,我们需要恢复到上次执行时的环境. 所谓的环境,具体指的有两件事:
   - **local variables**: $i$需要恢复成为2.
   - **程序计数器 PC**: 再次调用时,我们将从yield的下一行开始执行, 即第4行 i++.
 
