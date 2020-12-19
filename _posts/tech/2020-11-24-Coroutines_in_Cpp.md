@@ -8,8 +8,6 @@ tags: Tech Cpp
 
 # Coroutines in Cpp
 
-代码都写完了, 但没空写一篇总结, 先写个标题占坑.
-
 ## Background
 
 写完发现自己重新发明了一个轮子... 这里有一份很好的总结: [**Coroutines in C**](https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)
@@ -40,9 +38,9 @@ f() -> error: no next element, it was done.
 ...
 ```
 
-这篇博客的最终目的就是要在Cpp中实现Yield语句, 我们先展示一下最终效果
+这篇博客的最终目的就是要在Cpp中实现Yield语句, 我们先展示一下最终效果.
 
-```
+```cpp
 class F : public Generator<int> {
 public:
     int i;
