@@ -213,6 +213,10 @@ public:
 ### Macro Implementation
 
 接口设计完之后,还需要解决如何自动把control flow拆解成switch的case. 这就轮到Macro登场了.
+
+以这段代码为例,我们展示一下如何转换成switch.
+
+在这段代码里面有一个局部变量`bool flag`,然后有一个`if(){ ... }else{ ... }`.
 ```cpp
 bool f(int& output) {
   bool flag = true;
