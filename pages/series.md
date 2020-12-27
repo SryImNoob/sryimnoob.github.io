@@ -9,7 +9,7 @@ permalink: /series/
 
 <section class="container posts-content">
   
-{% assign sorted_series = site.posts | map: "series" | compact | sort %}
+{% assign sorted_series = site.posts | map: "series" | compact | uniq | sort %}
 {% for series in sorted_series %}
   <h3 id="{{ series }}">{{ series }}</h3>
   <ol class="posts-list">
