@@ -23,6 +23,7 @@ permalink: /series/
   {% endfor %}
   </ol>
 {% endfor %}
+
 </section>
 
 <!-- /section.content -->
