@@ -3,7 +3,7 @@ layout: post
 title: RUP, Agile和Scrum
 categories: Engineering
 description: 
-tags: Engineering, Life
+tags: Engineering Life
 ---
 
 # RUP, Agile和Scrum
