@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[碎碎念] 图书馆读书的大爷"
-categories: Life
+categories: Zzz
 description: Perhaps that's been the story of life.
 tags: Life Zzz
 series: 碎碎念系列
