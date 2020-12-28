@@ -2,7 +2,7 @@
 layout: post
 title: RUP, Agile和Scrum
 categories: Engineering
-description: 
+description: 设计系统的架构受制于产生这些设计的组织的沟通结构。--康威定律
 tags: Engineering Zzz
 ---
 
