@@ -6,7 +6,7 @@ comments: false
 ---
 <script>
 var words = [
-    '{{ site.data.words | join: "','" }}'
+    "{{ site.data.words | join: "\",\"" }}"
 ];
 var cur_word_ind = -1;
 function randInd(n) {
