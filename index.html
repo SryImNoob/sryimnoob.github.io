@@ -17,9 +17,9 @@ function randSentence(words) {
 }
 function showSentenceTimer(id, word, callback) {
     let ind = 1;
-    let min_spend = 100;
-    let delta_spend = 100;
-    
+    let min_speed = 100;
+    let delta_speed = 100;
+    let rate = 0.9
     function insideTimer() {
         if(ind == word.length + 1) {
             document.getElementById(id).innerHTML = word;
@@ -28,8 +28,8 @@ function showSentenceTimer(id, word, callback) {
         }
         document.getElementById(id).innerHTML = word.substring(0, ind) + "_";
         ind++;
-        delta_spend *= 0.9;
-        window.setTimeout(insideTimer, min_spend + delta_spend);
+        delta_speed *= rate;
+        window.setTimeout(insideTimer, min_speed + delta_speed);
     }
     insideTimer();
 }
