@@ -2,7 +2,7 @@
 layout: post
 title: "[碎碎念] 职场政治"
 categories: Zzz
-description: "打工人，打工魂，打工都是人上人。"
+description: "打工人，打工魂，打工都是人上人！"
 tags: Life Zzz
 series: 碎碎念系列
 ---
