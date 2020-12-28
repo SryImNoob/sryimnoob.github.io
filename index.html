@@ -45,11 +45,13 @@ function shuffleArray(array) {
 }
 
 function randSentenceTimer() {
-    if(cur_word_ind == -1 || cur_word_ind == words.length) {
-        shuffleArray(words);
+    if(cur_word_ind == words.length) {
         cur_word_ind == -1;
     }
-    cur_word_ind = cur_word_ind + 1;
+    if(cur_word_ind == -1) {
+        shuffleArray(words);
+    }
+    cur_word_ind += 1;
     showSentenceTimer('sentence', words[cur_word_ind], randSentenceTimer);
 }
 </script>
