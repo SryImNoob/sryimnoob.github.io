@@ -19,7 +19,7 @@ function showSentenceTimer(id, word, callback) {
     let ind = 1;
     let min_speed = 100;
     let delta_speed = 100;
-    let rate = 0.9
+    let rate = 0.9;
     function insideTimer() {
         if(ind == word.length + 1) {
             document.getElementById(id).innerHTML = word;
