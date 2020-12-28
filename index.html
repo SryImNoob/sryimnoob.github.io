@@ -33,12 +33,23 @@ function showSentenceTimer(id, word, callback) {
     }
     insideTimer();
 }
-function randSentenceTimer() {
-    let next_word_ind = randInd(words.length);
-    while (cur_word_ind == next_word_ind) {
-        next_word_ind = randInd(words.length);
+    
+/* Randomize array in-place using Durstenfeld shuffle algorithm */
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
-    cur_word_ind = next_word_ind;
+}
+
+function randSentenceTimer() {
+    if(cur_word_ind == -1 || cur_word_ind == words.length) {
+        shuffleArray(words);
+        cur_word_ind == -1;
+    }
+    cur_word_ind = cur_word_ind + 1;
     showSentenceTimer('sentence', words[cur_word_ind], randSentenceTimer);
 }
 </script>
