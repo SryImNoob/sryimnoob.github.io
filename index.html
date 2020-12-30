@@ -8,7 +8,7 @@ comments: false
 var words = [
     "{{ site.data.words | join: '","' }}"
 ];
-var cur_word_ind = -1;
+var cur_word_ind = 0;
 function randInd(n) {
     return Math.floor(Math.random() * n);
 }
@@ -46,13 +46,13 @@ function shuffleArray(array) {
 
 function randSentenceTimer() {
     if(cur_word_ind == words.length) {
-        cur_word_ind == -1;
+        cur_word_ind == 0;
     }
-    if(cur_word_ind == -1) {
+    if(cur_word_ind == 0) {
         shuffleArray(words);
     }
-    cur_word_ind += 1;
     showSentenceTimer('sentence', words[cur_word_ind], randSentenceTimer);
+    cur_word_ind += 1;
 }
 </script>
 
