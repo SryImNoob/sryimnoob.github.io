@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Effective Java
+title: "[笔记] Effective Java"
 categories: Tech
-description: 
-tags: Tech Java
+description: Notes on Effective Java
+tags: Tech Java 读书笔记
 ---
 
 # Notes on Effective Java
