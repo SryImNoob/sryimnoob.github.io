@@ -2,7 +2,7 @@
 layout: post
 title: "[笔记] 企业IT架构转型之道"
 categories: Engineering
-description: 中台,就是高复用率的微服务。
+description: 中台，就是高复用率的微服务。
 tags: Engineering 读书笔记
 ---
 
