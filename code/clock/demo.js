@@ -172,6 +172,7 @@ function gameLoop() {
 	} else {
 		if(time_freeze_count < TIME_FREEZE) {
 			setStatic(objs, true);
+			setColor(objs, 'grey');
 			time_freeze_count += delta;
 			Engine.update(engine, delta);
 			return;
