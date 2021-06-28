@@ -18,6 +18,22 @@ layout: default
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mzlogin/kityminder-core@dev/dist/kityminder.core.css">
 
+<div id="demo"></div>
+
 <article class="article-content markdown-body" style="display:none;">
 {{ content }}
 </article>
+
+<script>
+
+function renderDemo() {
+    var headerHeight = $('header.site-header')[0].offsetHeight;
+    var footerHeight = $('footer.container')[0].offsetHeight;
+    var mindmapHeight = $(window).height() - headerHeight - footerHeight;
+    $('#demo').height('' + mindmapHeight + "px");
+}
+
+$(document).ready(function() {
+  renderDemo();
+});
+</script>
