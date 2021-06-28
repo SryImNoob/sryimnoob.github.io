@@ -24,7 +24,7 @@ var engine = Engine.create();
 var world = engine.world;
 
 var render = Render.create({
-element: document.body,
+element: document.getElementById("clock"),
 engine: engine,
 options: {
 width: WIDTH,
@@ -239,14 +239,6 @@ function createGround() {
 	}
 	return ret;
 }
-
-
-function clickOnReverseTime() {
-	console.log(reverseTime);
-	reverseTime ^= reverseTime;
-}
-
-
 
 function setStatic(objs, isStatic) {
 	for (let i = 0; i < objs.length; ++i) {
