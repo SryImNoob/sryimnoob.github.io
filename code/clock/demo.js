@@ -226,13 +226,13 @@ function randVelocity(objs) {
 function createGround() {
 	var K = 50;
 	var ret = [
-		Bodies.rectangle(WIDTH / 2    , HEIGHT - K / 2, WIDTH, K     ),
-		Bodies.rectangle(WIDTH / 2    , K / 2         , WIDTH, K     ),
-		Bodies.rectangle(WIDTH - K / 2, HEIGHT / 2    , K,     HEIGHT),
-		Bodies.rectangle(K / 2        , HEIGHT / 2    , K,     HEIGHT)
+		Bodies.rectangle(WIDTH / 2    , HEIGHT + K / 2, WIDTH, K     ),
+		Bodies.rectangle(WIDTH / 2    , - K / 2         , WIDTH, K     ),
+		Bodies.rectangle(WIDTH + K / 2, HEIGHT / 2    , K,     HEIGHT),
+		Bodies.rectangle(- K / 2        , HEIGHT / 2    , K,     HEIGHT)
 		];
 	for(var i = 0; i < ret.length; ++i) {
-		ret[i].render.fillStyle = 'gray';
+		ret[i].render.fillStyle = 'white';
 		ret[i].restitution = 1.0;
 		ret[i].friction = 0.0;
 		ret[i].isStatic = true;
