@@ -149,6 +149,8 @@ function init() {
 	display_time = new Date(current.getTime() + TIME_OFFSET);
 	objs = createTimeBodies(display_time);
 	setDensity(objs, 0.005);
+	resetPosition(oldObjs);
+	resetVelocity(oldObjs);
 	World.add(world, objs);
 	return display_time;
 }
@@ -267,9 +269,22 @@ function setRFA(objs, r, f, fa) {
 	}
 }
 
-
 function setDensity(objs, density) {
 	for(var i = 0; i < objs.length; ++i) {
 		Body.setDensity(objs[i], density);
+	}
+}
+
+function resetPosition(objs) {
+	for(var i = 0; i < objs.length; ++i) {
+		Body.setPosition(objs[i], { 
+			x: (objs[i].position.x % WIDTH + WIDTH) % WIDTH, 
+			y: (objs[i].position.y % HEIGHT + HEIGHT) % HEIGHT });
+	}
+}
+
+function resetVelocity(objs) {
+	for(let i = 0; i < objs.length; ++i) {
+		Body.setVelocity(objs[i], {x: 0, y: 0});
 	}
 }
