@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: demo
 title: "Time Reversal Clock"
 categories: Zzz
 description: "Freeze! Reverse!"
