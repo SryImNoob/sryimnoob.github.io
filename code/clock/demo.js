@@ -46,7 +46,7 @@ setColor(oldObjs, 'blue');
 //setRFA(oldObjs, 0.9, 0.01, 0.01);
 World.add(world, oldObjs);
 
-console.log(oldObjs[0].density);
+//console.log(oldObjs[0].density);
 
 Render.run(render);
 
@@ -99,7 +99,7 @@ function createTimeBodies(date) {
 	var s = timeFormat.format(date);
 	//s = words[word_i]; word_i = (word_i + 1) % words.length;
 	var ret = createStringBodies(s, false);
-	console.log(s, ret.length);
+	//console.log(s, ret.length);
 	setColor(ret[2], 'orange');
 	setColor(ret[5], 'orange');
 	if(Math.random() > 0.5 && prev_display_time != null) {
@@ -225,12 +225,12 @@ function randVelocity(objs) {
 }
 
 function createGround() {
-	var K = 50;
+	var K = 100;
 	var ret = [
 		Bodies.rectangle(WIDTH / 2    , HEIGHT + K / 2, WIDTH, K     ),
-		Bodies.rectangle(WIDTH / 2    , - K / 2         , WIDTH, K     ),
+		Bodies.rectangle(WIDTH / 2    , - K / 2       , WIDTH, K     ),
 		Bodies.rectangle(WIDTH + K / 2, HEIGHT / 2    , K,     HEIGHT),
-		Bodies.rectangle(- K / 2        , HEIGHT / 2    , K,     HEIGHT)
+		Bodies.rectangle(- K / 2      , HEIGHT / 2    , K,     HEIGHT)
 		];
 	for(var i = 0; i < ret.length; ++i) {
 		ret[i].render.fillStyle = 'white';
