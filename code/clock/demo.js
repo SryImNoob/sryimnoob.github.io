@@ -136,7 +136,7 @@ var display_time = null;
 
 var reverseTime = false;
 
-var TIME_FREEZE = 300;
+var TIME_FREEZE = 0;
 
 var time_freeze_count = 0;
 
