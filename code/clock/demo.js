@@ -50,7 +50,7 @@ Render.run(render);
 
 INTERVAL = 20;
 
-TIME_WINDOW = 2000;
+TIME_WINDOW = 5000;
 
 WAIT_TIME = 2000;
 
