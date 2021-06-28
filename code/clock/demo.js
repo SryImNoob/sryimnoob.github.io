@@ -24,7 +24,7 @@ var engine = Engine.create();
 var world = engine.world;
 
 var render = Render.create({
-element: document.getElementById("clock"),
+element: document.getElementById("demo"),
 engine: engine,
 options: {
 width: WIDTH,
