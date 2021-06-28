@@ -39,14 +39,12 @@ var RADIUS = 8;
 
 var stack = [];
 var objs = null;
-var oldObjs = null;
+var oldObjs = [];
 //oldObjs = createTimeBodies(Date.now());
-oldObjs = createStringBodies("HELLOWORLD");
+//oldObjs = createStringBodies("HELLOWORLD");
 setColor(oldObjs, 'blue');
 //setRFA(oldObjs, 0.9, 0.01, 0.01);
 World.add(world, oldObjs);
-
-//console.log(oldObjs[0].density);
 
 Render.run(render);
 
