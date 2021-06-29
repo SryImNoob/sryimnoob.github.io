@@ -163,7 +163,7 @@ function gameLoop() {
 		init();
 		setStatic(objs, true);
 		reverseTime = true;
-		waiting = 0;
+		waiting = WAIT_TIME - 500;
 	}
 	if(reverseTime == false) {
 		var copyObjs = _.cloneDeep(objs);
