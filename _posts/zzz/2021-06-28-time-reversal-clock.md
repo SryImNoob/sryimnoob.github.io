@@ -2,7 +2,7 @@
 layout: demo
 title: "Time Reversal Clock"
 categories: Zzz
-description: "Freeze! Reverse!"
+description: "Back to the Future"
 tags: Tech Zzz
 ---
 <script>
