@@ -318,16 +318,16 @@ var stateBack = createString("BACK", 10, 10, 5, 'white').flat();
 
 Events.on(render, "afterRender", function() {
     var ctx = render.context;
-	var alpha = 0.1;
+	var alpha = 0.2;
 	if(reverseTime == false) {
 		displayObjs(ctx, prevObjs, RADIUS, alpha);
 		displayObjs(ctx, statePlay, 5, alpha);
-		displayStacks(ctx, stack, 'orange', 2, 0.1);
+		displayTrack(ctx, stack, 'orange', 2, alpha);
 	} else {
 		if(stack.length > 0) {
 			displayObjs(ctx, prevObjs, RADIUS, alpha * ((stack.length + (skip ? 0.5 : 0)) * INTERVAL / TIME_WINDOW));
 			displayObjs(ctx, stateBack, 5, alpha);
-			displayStacks(ctx, stack, 'orange', 2, 0.1);
+			displayTrack(ctx, stack, 'orange', 2, alpha);
 		} else {
 			displayObjs(ctx, stateStop, 5, alpha);
 		}
@@ -355,15 +355,17 @@ function hashCode(str) {
     return hash;
 }
 
-function displayStacks(ctx, stack, color, radius, alpha) {
+function displayTrack(ctx, stack, color, radius, alpha) {
 	ctx.globalAlpha = alpha;
 	var t = hashCode(timeFormat.format(display_time)) % 11;
+	if(t >= 8) return;
 	for(var i = 0; i < stack.length; ++i) {
 		var k = 0;
 		for(var j = 0; j < stack[i].length; ++j) {
 			var c = stack[i][j].render.fillStyle;
 			if(c != color) continue;
 			if(k++ % 8 != t) { continue; }
+			if(stack[i][j].isStatic) break;
 			var point = stack[i][j].position;
 			ctx.fillStyle = c;
 			ctx.beginPath();
