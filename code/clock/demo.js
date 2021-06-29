@@ -102,22 +102,31 @@ function createTimeBodies(date) {
 	//console.log(s, ret.length);
 	setColor(ret[2], 'orange');
 	setColor(ret[5], 'orange');
+	var allStatic = true;
 	if(Math.random() > 0.5 && prev_display_time != null) {
 		var ps = timeFormat.format(prev_display_time);
 		if(ps[0] == s[0] && ps[1] == s[1]) {
 			setStatic(ret[0], true);
 			setStatic(ret[1], true);
+		} else {
+			allStatic = false;
 		}
 		if(ps[3] == s[3] && ps[4] == s[4]) {
 			setStatic(ret[3], true);
 			setStatic(ret[4], true);
+		} else {
+			allStatic = false;
 		}
 		if(ps[6] == s[6] && ps[7] == s[7]) {
 			setStatic(ret[6], true);
 			setStatic(ret[7], true);
+		} else {
+			allStatic = false;
 		}
+	} else {
+		allStatic = false;
 	}
-	if(orangeIsStatic) {
+	if(orangeIsStatic && allStatic == false) {
 		setStatic(ret[2], true);
 		setStatic(ret[5], true);
 	}
