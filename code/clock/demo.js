@@ -1,4 +1,5 @@
 var Engine = Matter.Engine,
+Events = Matter.Events,
 Render = Matter.Render,
 World = Matter.World,
 Bodies = Matter.Bodies;
@@ -35,11 +36,12 @@ wireframes: false
 var grounds = createGround();
 World.add(world, grounds);
 
-var RADIUS = 8;
+var RADIUS = 10;
 
 var stack = [];
 var objs = null;
 var oldObjs = [];
+var prevObjs = [];
 //oldObjs = createTimeBodies(Date.now());
 //oldObjs = createStringBodies("HELLOWORLD");
 setColor(oldObjs, 'blue');
@@ -48,7 +50,7 @@ World.add(world, oldObjs);
 
 Render.run(render);
 
-INTERVAL = 20;
+INTERVAL = 10;
 
 TIME_WINDOW = 5000;
 
@@ -180,6 +182,11 @@ function gameLoop() {
 			Engine.update(engine, delta);
 			return;
 		}
+		/*
+		if(stack.length < 500 / INTERVAL) {
+			prevObjs = [];
+		}
+		*/
 		if(stack.length > 0) {
 			if(skip == false) {
 				removeObjs(world, objs);
@@ -208,6 +215,7 @@ function gameLoop() {
 					setStatic(oldObjs, false);
 					*/
 					//setRFA(oldObjs, 1.0, 0, 0);
+					prevObjs = objs;
 					init_world();
 					init();
 					stack = [];
@@ -288,4 +296,71 @@ function resetVelocity(objs) {
 	for(let i = 0; i < objs.length; ++i) {
 		Body.setVelocity(objs[i], {x: 0, y: 0});
 	}
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+
+var statePlay = createString("PLAY", 10, 10, 5, 'green').flat();
+var stateStop = createString("STOP", 10, 10, 5, 'red').flat();
+var stateBack = createString("BACK", 10, 10, 5, 'white').flat();
+
+Events.on(render, "afterRender", function() {
+    var ctx = render.context;
+	var alpha = 0.1;
+	if(reverseTime == false) {
+		displayObjs(ctx, prevObjs, RADIUS, alpha);
+		displayObjs(ctx, statePlay, 5, alpha);
+		displayStacks(ctx, stack, 'orange', 2, 0.1);
+	} else {
+		if(stack.length > 0) {
+			displayObjs(ctx, prevObjs, RADIUS, alpha * ((stack.length + (skip ? 0.5 : 0)) * INTERVAL / TIME_WINDOW));
+			displayObjs(ctx, stateBack, 5, alpha);
+			displayStacks(ctx, stack, 'orange', 2, 0.1);
+		} else {
+			displayObjs(ctx, stateStop, 5, alpha);
+		}
+	}
+});
+
+function displayObjs(ctx, objs, radius, alpha) {
+	ctx.globalAlpha = alpha;
+	for(var i = 0; i < objs.length; ++i) {
+		var point = objs[i].position;
+        var color = objs[i].render.fillStyle;
+		ctx.fillStyle = color;
+		ctx.beginPath();
+		ctx.arc(point.x, point.y, radius, 0, Math.PI * 2, true);
+        ctx.fill();
+	}
+	ctx.globalAlpha = 1;
+}
+
+function hashCode(str) {
+    var hash = 0, i = 0, len = str.length;
+    while ( i < len ) {
+        hash  = ((hash << 5) - hash + str.charCodeAt(i++)) << 0;
+    }
+    return hash;
+}
+
+function displayStacks(ctx, stack, color, radius, alpha) {
+	ctx.globalAlpha = alpha;
+	var t = hashCode(timeFormat.format(display_time)) % 11;
+	for(var i = 0; i < stack.length; ++i) {
+		var k = 0;
+		for(var j = 0; j < stack[i].length; ++j) {
+			var c = stack[i][j].render.fillStyle;
+			if(c != color) continue;
+			if(k++ % 8 != t) { continue; }
+			var point = stack[i][j].position;
+			ctx.fillStyle = c;
+			ctx.beginPath();
+			ctx.arc(point.x, point.y, radius, 0, Math.PI * 2, true);
+			ctx.fill();
+		}
+	}
+	ctx.globalAlpha = 1;
 }
