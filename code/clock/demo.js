@@ -111,7 +111,7 @@ function createTimeBodies(date) {
 			setStatic(ret[4], true);
 		}
 		if(ps[6] == s[6] && ps[7] == s[7]) {
-			setStatic(ret[7], true);
+			setStatic(ret[6], true);
 			setStatic(ret[7], true);
 		}
 	}
