@@ -151,7 +151,7 @@ var time_freeze_count = 0;
 
 var TIME_OFFSET = TIME_WINDOW * 3 + TIME_FREEZE + 500;
 
-var mode = 1;
+var mode = 0;
 
 var mode_0_time_window = TIME_WINDOW;
 
@@ -180,7 +180,6 @@ function init() {
 var waiting = 0;
 
 var skip = false;
-
 
 function gameLoop() {
 	delta = getDelta();
@@ -384,7 +383,7 @@ function getRandomInt(max) {
 
 var statePlay = createString("PLAY", 10, 10, 5, 'green').flat();
 var stateStop = createString("STOP", 10, 10, 5, 'red').flat();
-var stateBack = createString("BACK", 10, 10, 5, 'white').flat();
+var stateBack = createString("BACK TO FUTURE", 10, 10, 5, 'white').flat();
 
 Events.on(render, "afterRender", function() {
     var ctx = render.context;
@@ -445,14 +444,14 @@ function hashCode(str) {
 
 function displayTrack(ctx, stack, color, radius, alpha) {
 	ctx.globalAlpha = alpha;
-	var t = hashCode(timeFormat.format(display_time)) % 11;
-	if(t >= 8) return;
+	var t = hashCode(timeFormat.format(display_time)) % 20;
+	if(t >= 16) return;
 	for(var i = 0; i < stack.length; ++i) {
 		var k = 0;
 		for(var j = 0; j < stack[i].length; ++j) {
 			var c = stack[i][j].render.fillStyle;
 			if(c != color) continue;
-			if(k++ % 8 != t) { continue; }
+			if(k++ % 16 != t) { continue; }
 			if(stack[i][j].isStatic) continue;
 			var point = stack[i][j].position;
 			ctx.fillStyle = c;
