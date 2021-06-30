@@ -383,7 +383,7 @@ function getRandomInt(max) {
 
 var statePlay = createString("PLAY", 10, 10, 5, 'green').flat();
 var stateStop = createString("STOP", 10, 10, 5, 'red').flat();
-var stateBack = createString("BACK TO FUTURE", 10, 10, 5, 'white').flat();
+var stateBack = createString("BACK TO THE FUTURE", 10, 10, 5, 'white').flat();
 
 Events.on(render, "afterRender", function() {
     var ctx = render.context;
