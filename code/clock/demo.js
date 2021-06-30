@@ -158,7 +158,7 @@ var mode_0_time_window = TIME_WINDOW;
 var mode_1_time_window = TIME_WINDOW * 3;
 
 function init() {
-	mode = 1 - mode;
+	mode = Math.random() < 0.7 ? 0 : 1;
 	if(mode == 1) {
 		TIME_WINDOW = mode_1_time_window;
 	} else {
