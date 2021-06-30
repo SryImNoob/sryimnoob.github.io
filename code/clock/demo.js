@@ -52,9 +52,9 @@ Render.run(render);
 
 INTERVAL = 10;
 
-TIME_WINDOW = 5000;
+TIME_WINDOW = 1000;
 
-WAIT_TIME = 2000;
+WAIT_TIME = 1000;
 
 setInterval(gameLoop, INTERVAL);
 
