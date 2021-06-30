@@ -151,7 +151,20 @@ var time_freeze_count = 0;
 
 var TIME_OFFSET = TIME_WINDOW * 3 + TIME_FREEZE + 500;
 
+var mode = 1;
+
+var mode_0_time_window = TIME_WINDOW;
+
+var mode_1_time_window = TIME_WINDOW * 3;
+
 function init() {
+	mode = 1 - mode;
+	if(mode == 1) {
+		TIME_WINDOW = mode_1_time_window;
+	} else {
+		TIME_WINDOW = mode_0_time_window;
+	}
+	TIME_OFFSET = TIME_WINDOW * 3 + TIME_FREEZE + 500;
 	reverseTime = false;
 	prev_display_time = display_time;
 	var current = new Date();
@@ -168,6 +181,7 @@ var waiting = 0;
 
 var skip = false;
 
+
 function gameLoop() {
 	delta = getDelta();
 	if(objs == null) {
@@ -179,6 +193,48 @@ function gameLoop() {
 	if(reverseTime == false) {
 		var copyObjs = _.cloneDeep(objs);
 		stack.push(copyObjs);
+		/*
+		for(var i = 0; i < objs.length; ++i) {
+			if(objs[i].isStatic == false) {
+				if(Math.random() > 0.9) {
+					objs[i].isStatic = true;
+				}
+				break;
+			}
+		}
+		*/
+		if(mode == 1 && stack.length % 5 == 0) {
+			var leftToRight = hashCode(timeFormat.format(display_time)) % 2;
+			if(leftToRight) {
+				for(var i = 0; i < objs.length; ++i) {
+					if(objs[i].isStatic == false) continue;
+					for(var j = i; j < objs.length; ++j) {
+						if(objs[j].position.x != objs[i].position.x) break;
+						objs[j].isStatic = false;
+						objs[j].render.visible = true;
+					}
+					for(var j = 0; j < prevObjs.length; ++j) {
+						if(prevObjs[j].position.x > objs[i].position.x && objs[objs.length - 1].render.visible == false) break;
+						prevObjs[j].render.visible = false;
+					}
+					break;
+				}
+			} else {
+				for(var i = objs.length - 1; i >= 0; --i) {
+					if(objs[i].isStatic == false) continue;
+					for(var j = i; j >= 0; --j) {
+						if(objs[j].position.x != objs[i].position.x) break;
+						objs[j].isStatic = false;
+						objs[j].render.visible = true;
+					}
+					for(var j = prevObjs.length - 1; j >= 0; --j) {
+						if(prevObjs[j].position.x < objs[i].position.x && objs[0].render.visible == false) break;
+						prevObjs[j].render.visible = false;
+					}
+					break;
+				}
+			}
+		}
 		if(stack.length > TIME_WINDOW / INTERVAL) {
 			reverseTime = true;
 			time_freeze_count = 0;
@@ -201,6 +257,7 @@ function gameLoop() {
 				removeObjs(world, objs);
 				objs = stack.pop();
 				setStatic(objs, true);
+				setVisible(objs, true);
 				World.add(world, objs);
 			}
 			skip ^= true;
@@ -227,6 +284,13 @@ function gameLoop() {
 					prevObjs = objs;
 					init_world();
 					init();
+					if(mode == 1) {
+						setStatic(objs, true);
+						setVisible(objs, false);
+						setVisible(prevObjs, true);
+					} else {
+						setVisible(prevObjs, false);
+					}
 					stack = [];
 					var copyObjs = _.cloneDeep(objs);
 					stack.push(copyObjs);
@@ -270,6 +334,12 @@ function setStatic(objs, isStatic) {
 function setColor(objs, color) {
 	for (let i = 0; i < objs.length; ++i) {
 		objs[i].render.fillStyle = color;
+	}
+}
+
+function setVisible(objs, visible) {
+	for (let i = 0; i < objs.length; ++i) {
+		objs[i].render.visible = visible;
 	}
 }
 
@@ -319,8 +389,9 @@ var stateBack = createString("BACK", 10, 10, 5, 'white').flat();
 Events.on(render, "afterRender", function() {
     var ctx = render.context;
 	var alpha = 0.2;
+	
 	if(reverseTime == false) {
-		displayObjs(ctx, prevObjs, RADIUS, alpha);
+		displayObjsWithVisable(ctx, prevObjs, RADIUS, alpha);
 		displayObjs(ctx, statePlay, 5, alpha);
 		displayTrack(ctx, stack, 'orange', 2, alpha);
 	} else {
@@ -337,6 +408,23 @@ Events.on(render, "afterRender", function() {
 function displayObjs(ctx, objs, radius, alpha) {
 	ctx.globalAlpha = alpha;
 	for(var i = 0; i < objs.length; ++i) {
+		var point = objs[i].position;
+        var color = objs[i].render.fillStyle;
+		ctx.fillStyle = color;
+		ctx.beginPath();
+		ctx.arc(point.x, point.y, radius, 0, Math.PI * 2, true);
+        ctx.fill();
+	}
+	ctx.globalAlpha = 1;
+}
+
+function displayObjsWithVisable(ctx, objs, radius, alpha) {
+	for(var i = 0; i < objs.length; ++i) {
+		if(objs[i].render.visible) {
+			ctx.globalAlpha = 1;
+		}else {
+			ctx.globalAlpha = alpha;
+		}
 		var point = objs[i].position;
         var color = objs[i].render.fillStyle;
 		ctx.fillStyle = color;
@@ -365,7 +453,7 @@ function displayTrack(ctx, stack, color, radius, alpha) {
 			var c = stack[i][j].render.fillStyle;
 			if(c != color) continue;
 			if(k++ % 8 != t) { continue; }
-			if(stack[i][j].isStatic) break;
+			if(stack[i][j].isStatic) continue;
 			var point = stack[i][j].position;
 			ctx.fillStyle = c;
 			ctx.beginPath();
@@ -374,4 +462,14 @@ function displayTrack(ctx, stack, color, radius, alpha) {
 		}
 	}
 	ctx.globalAlpha = 1;
+}
+
+function range(n, reverse) {
+	var ret = [];
+	if(reverse) {
+		for(var i = n - 1; i >= 0; --i) ret.push(i);
+	} else {
+		for(var i = 0; i < n; ++i) ret.push(i);
+	}
+	return ret;
 }
