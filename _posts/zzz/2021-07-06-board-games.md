@@ -12,7 +12,7 @@ tags: Life Zzz Game
 
 ## 桌游综述
 
-桌游的权威网站BGG https://boardgamegeek.com/
+桌游的权威网站BGG [https://boardgamegeek.com/](https://boardgamegeek.com/)
 
 我大概考虑以下几个维度：
   - 复杂程度：规则讲解时间，桌游初始化时间，人工回合结算难度，额外道具。
@@ -50,4 +50,45 @@ tags: Life Zzz Game
   - 玩家没有特定身份：所有玩家的身份都是相同的，那么最终目标也是相同的。虽然有多种获胜途径，获胜路径是通用的，大家可以自由选择自己的获胜途径。
   - 前期发展不好，导致必败局面，会导致后期无所事事。
 
-未完待续。
+
+# 桌游列表
+
+Catan
+
+Exploding Kittens
+
+Avalon
+
+Brass
+
+Dune: Imperium
+
+Age of Steam
+
+Gloomhaven
+
+Gloomhaven: Jaws of The Lion
+
+The Mind
+
+Root
+
+Carcassonne
+
+Citadels
+
+Ascension
+
+The Crew
+
+Through The Ages
+
+Ponzi Scheme
+
+Terra Mystica
+
+Ticket to Ride
+
+Mansions of Madness(疯狂诡宅)
+
+Arkham Horror(诡镇奇谈)
