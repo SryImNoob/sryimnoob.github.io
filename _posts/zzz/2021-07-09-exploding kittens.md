@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "爆炸猫"
+title: "桌游：爆炸猫!!!"
 categories: Zzz
-description: "Exploding Kittens"
+description: "Exploding Kittens!!!"
 tags: Life Zzz Game
 ---
 
-# 爆炸猫
+# 桌游：爆炸猫!!!
 
 假期发现的宝藏游戏，感觉4人玩最佳，10分钟一局。5人玩会有人空闲太久。
 
