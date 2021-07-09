@@ -14,6 +14,8 @@ tags: Life Zzz Game
 
 桌游的权威网站BGG [https://boardgamegeek.com/](https://boardgamegeek.com/)
 
+弈乎 [http://www.yihubg.com/](http://www.yihubg.com/)
+
 我大概考虑以下几个维度：
   - 复杂程度：规则讲解时间，桌游初始化时间，人工回合结算难度，额外道具。
   - 人数范围：双人，三人，四人，五人以上。
@@ -30,7 +32,7 @@ tags: Life Zzz Game
   - 扑克牌：一副牌即可的打牌游戏，一局10分钟。UNO，The Mind，爆炸猫。
   - 狼人杀：因为大家都很熟悉杀人游戏，所以单独分为一类。狼人杀，三国杀，阿瓦隆。
   - 运营游戏：卡坦岛之类的老牌桌游。都需要额外道具，还需要大一点的桌子摆地图。卡坦岛，卡卡颂，Brass，Root，Through The Ages，Terraforming Mars。
-  - 角色扮演：DND，COC之类的，多数是跑团共斗游戏，就是一起打怪拿装备升级。Gloomhaven，The Crew。
+  - 角色扮演：DND，COC之类的，多数是跑团共斗游戏，就是一起打怪拿装备升级。Gloomhaven，Arkham Horror。
   
 好像已经忘记了好多游戏。。。回头再补。
 
@@ -38,57 +40,111 @@ tags: Life Zzz Game
 
 基于平时聚会的特点，还有自己的兴趣，说一下考察过的桌游。
 
-### 爆炸猫
+**爆炸猫**
 
-### 阿瓦隆
+**阿瓦隆**
 
 ### 运营游戏
 
-目前还没决定买哪一个实体，感觉可以玩到的机会不多，规则比较复杂。难以决定的另一个原因是：我只玩过卡坦岛。
+感觉可以玩到的机会不多，规则比较复杂。
 
-因为我对卡坦岛比较熟，说一下卡坦岛的一些缺点：
+因为我对卡坦岛比较熟，说一下卡坦岛的缺点：
   - 玩家没有特定身份：所有玩家的身份都是相同的，那么最终目标也是相同的。虽然有多种获胜途径，获胜路径是通用的，大家可以自由选择自己的获胜途径。
   - 前期发展不好，导致必败局面，会导致后期无所事事。
+  
+玩了一下电脑上的《历史巨轮》，太重了，玩不了。
+
+买了一个《电力公司》试一试，据说很重。
+
+### 合作游戏
+
+我对合作游戏一般，但是买了几个好评如潮的试一下。
+
+**The Crew**
+
+**Pandemic**
+
+**The Mind**
+
+### 跑团游戏
+
+The Crew勉强算跑团? 先入手一个试试.
 
 
 # 桌游列表
 
-Catan
+## 简单
 
-Exploding Kittens
+Avalon 阿瓦隆
 
-Avalon
+Carcassonne 卡卡颂
 
-Brass
+Catan 卡坦岛
 
-Dune: Imperium
-
-Age of Steam
-
-Gloomhaven
-
-Gloomhaven: Jaws of The Lion
-
-The Mind
-
-Root
-
-Carcassonne
-
-Citadels
-
-Ascension
+Exploding Kittens 爆炸猫
 
 The Crew
 
-Through The Ages
+The Mind
+
+Ticket to Ride 车票之旅
+
+Splendor
+
+## 中等
+
+Citadels 富饶之城
+
+Ascension 暗杀神
+
+Dune: Imperium 沙丘:帝国
+
+Pandemic 瘟疫危机
+
+## 困难
+
+### 跑团
+
+Mansions of Madness 疯狂诡宅
+
+Arkham Horror 诡镇奇谈
+
+Gloomhaven 幽港迷城
+
+Gloomhaven: Jaws of The Lion 幽港迷城:雄狮之颚
+
+# 解密
+
+Chronicles of Crime 推理事件簿
+
+### 策略
+
+Terra Mystica 神秘大地
+
+Agricola 农家乐
+
+Power Grid 电力公司
+
+Puerto Rico 波多黎各
+
+Terraforming Mars
+
+Root
+
+Brass: Birmingham 工业革命:伯明翰
+
+Through The Ages 历史巨轮
+
+Age of Steam 蒸汽时代
+
+Steam: Rails to Riches 
 
 Ponzi Scheme
 
-Terra Mystica
+7 Wonders
 
-Ticket to Ride
+Scythe
 
-Mansions of Madness(疯狂诡宅)
+Twilight Struggle
 
-Arkham Horror(诡镇奇谈)
+Gaia Project 
