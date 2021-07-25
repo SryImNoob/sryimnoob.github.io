@@ -113,7 +113,7 @@ Gloomhaven 幽港迷城
 
 Gloomhaven: Jaws of The Lion 幽港迷城:雄狮之颚
 
-# 解密
+### 解密
 
 Chronicles of Crime 推理事件簿
 
