@@ -4,7 +4,7 @@ title: "教育与市场化"
 categories: Zzz
 description: "关于双减的一些思考"
 tags: Life
-series: 日常感想
+series: 胡思乱想
 ---
 
 # 教育与市场化
