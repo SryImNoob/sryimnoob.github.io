@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "房地产备忘录"
+title: "房地产备忘录 - 05/25/2002"
 categories: Zzz
 description: "关于房地产的思考"
 tags: Life
