@@ -77,3 +77,11 @@ $ tmux attach-session -t mysession
 
 `C-s` then type the string to search for and press `Enter`.
   - Press `n` to next.
+
+## Autostart
+
+```
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi  
+```
