@@ -3,7 +3,7 @@ layout: post
 title: "个人英雄主义与法外正义，个人立场与公众讨论"
 categories: Zzz
 description: "我对观点的认知模型"
-tags: Life, ChatGPT
+tags: Life ChatGPT
 series: 胡思乱想
 ---
 
