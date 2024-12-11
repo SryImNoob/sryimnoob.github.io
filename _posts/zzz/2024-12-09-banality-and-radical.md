@@ -3,7 +3,7 @@ layout: post
 title: "平庸之恶与根本恶"
 categories: Zzz
 description: "Delay, Deny, Defend"
-tags: Life, ChatGPT
+tags: Life ChatGPT
 series: 胡思乱想
 ---
 
