@@ -2,7 +2,7 @@
 layout: post
 title: Project Euler 499 - St. Petersburg Lottery
 categories: Puzzle
-description: diffculty rating 100%
+description: difficulty rating 100%
 tags: Algorithm Interview
 ---
 
