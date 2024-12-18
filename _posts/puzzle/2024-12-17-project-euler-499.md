@@ -51,46 +51,46 @@ The problem becomes to finding out the $t_m$ for the given $m$.
 
 First, the recursive equation of $g_m(s)$,
 
-$$$
+$$
 g_m(s) = \sum_{i=0}^{\infty}\frac{g_m(s - m + 2^i)}{2^{i+1}}
-$$$
+$$
 
 btw, a fun fact is that $p_m(s)$ has the same recursive equation. 
 
 Substitute $g_m(s) = e^{ts}$ into this equation,
 
-$$$
+$$
 e^{ts} = \sum_{i=0}^{\infty}\frac{e^{t(s - m + 2^i)}}{2^{i+1}}
-$$$
+$$
 
 Cancel $e^{ts}$,
 
-$$$
+$$
 e^{ts} = e^{ts} \sum_{i=0}^{\infty}\frac{e^{t(-m + 2^i)}}{2^{i+1}}
-$$$
+$$
 
-$$$
+$$
 1 = \sum_{i=0}^{\infty}\frac{e^{t(-m + 2^i)}}{2^{i+1}}
-$$$
+$$
 
 Multiply both sides by $e^{tm}$,
 
-$$$
+$$
 e^{tm} =  \sum_{i=0}^{\infty}\frac{e^{2^it}}{2^{i+1}}
-$$$
+$$
 
 Let $f_m(t) = e^{tm} - \sum_{i=0}^{\infty}\frac{e^{2^it}}{2^{i+1}}$,then $t_m$ is the root of $f_m(t) = 0$. 
 
 **Truncating $f_m(x)$ at finite terms**
 
-$$$
+$$
 f_m’(t) = e^{tm} - \sum_{i=0}^{49}\frac{e^{2^it}}{2^{i+1}}
-$$$
+$$
 
 **Finding the root $t_m$ using Newton’s method**
 
 Once the root $t_m$ is found, we compute
 
-$$$
+$$
 p_m(s) = 1 - e^{t_ms}
-$$$
+$$
