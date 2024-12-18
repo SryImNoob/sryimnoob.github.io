@@ -45,9 +45,9 @@ print(1 - e^(t0*1e9))
 
 let $g_m(s)$ denote the probability that the gambler will run out of money in this lottery given an initial fortune $s$ and the cost per game $m$. then $p_m(s) = 1 - g_m(s)$.
 
-**The key idea is that guessing the functional form $g_m(s) = e^{t_ms}$ where $t_m$ is an unknow constant value yet.**
+**The key idea is that guessing the functional form $g_m(s) = e^{t_ms}$ where $t$ is an unknow constant value yet.**
 
-The problem becomes to finding out the $t_m$ for the given $m$.
+The problem becomes to finding out the constant $t$ for the given $m$.
 
 First, the recursive equation of $g_m(s)$,
 
