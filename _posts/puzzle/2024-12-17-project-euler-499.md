@@ -6,9 +6,9 @@ description: diffculty rating 100%
 tags: Algorithm Interview
 ---
 
-Problem link: http://projecteuler.net/problem=499
+Problem link: [http://projecteuler.net/problem=499](http://projecteuler.net/problem=499)
 
-Solution: https://github.com/roosephu/project-euler/blob/master/499.sage
+Solution: [https://github.com/roosephu/project-euler/blob/master/499.sage](https://github.com/roosephu/project-euler/blob/master/499.sage)
 
 # St. Petersburg Lottery
 
@@ -79,7 +79,13 @@ $$
 e^{tm} =  \sum_{i=0}^{\infty}\frac{e^{2^it}}{2^{i+1}}
 $$
 
-Let $f_m(t) = e^{tm} - \sum_{i=0}^{\infty}\frac{e^{2^it}}{2^{i+1}}$,then $t_m$ is the root of $f_m(t) = 0$. 
+Let 
+
+$$
+f_m(t) = e^{tm} - \sum_{i=0}^{\infty}\frac{e^{2^it}}{2^{i+1}}
+$$,
+
+then $t_m$ is the root of $f_m(t) = 0$. 
 
 **Truncating $f_m(x)$ at finite terms**
 
@@ -87,7 +93,7 @@ $$
 f_m’(t) = e^{tm} - \sum_{i=0}^{49}\frac{e^{2^it}}{2^{i+1}}
 $$
 
-**Finding the root $t_m$ using Newton’s method**
+**Finding the root $t_m$ of $f_m'(t)$ using Newton’s method**
 
 Once the root $t_m$ is found, we compute
 
