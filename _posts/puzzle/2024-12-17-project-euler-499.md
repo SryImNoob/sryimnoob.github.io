@@ -83,9 +83,9 @@ Let
 
 $$
 f_m(t) = e^{tm} - \sum_{i=0}^{\infty}\frac{e^{2^it}}{2^{i+1}}
-$$,
+$$
 
-then $t_m$ is the root of $f_m(t) = 0$. 
+Then $t_m$ is the root of $f_m(t) = 0$. 
 
 **Truncating $f_m(x)$ at finite terms**
 
