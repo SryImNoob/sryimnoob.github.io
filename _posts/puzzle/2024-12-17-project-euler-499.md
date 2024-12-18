@@ -45,38 +45,50 @@ print(1 - e^(t0*1e9))
 
 let $g_m(s)$ denote the probability that the gambler will run out of money in this lottery given an initial fortune $s$ and the cost per game $m$. then $p_m(s) = 1 - g_m(s)$.
 
-**The key idea is that guessing the functional form $g_m(s) = e^{ts}$ where $t$ is an unknow constant value.**
+**The key idea is that guessing the functional form $g_m(s) = e^{t_ms}$ where $t_m$ is an unknow constant value yet.**
 
-$g_m(s) = \sum_{i=0}^{\infty}\frac{g_m(s - m + 2^i)}{2^{i+1}}$
+The problem becomes to finding out the $t_m$ for the given $m$.
 
-btw, a fun fact is that $p_m(s)$ has the same recursive equation. Substitute $g_m(s) = e^{ts}$ into this equation.
+First, the recursive equation of $g_m(s)$,
 
-$
+$$$
+g_m(s) = \sum_{i=0}^{\infty}\frac{g_m(s - m + 2^i)}{2^{i+1}}
+$$$
+
+btw, a fun fact is that $p_m(s)$ has the same recursive equation. 
+
+Substitute $g_m(s) = e^{ts}$ into this equation,
+
+$$$
 e^{ts} = \sum_{i=0}^{\infty}\frac{e^{t(s - m + 2^i)}}{2^{i+1}}
-$
+$$$
 
 Cancel $e^{ts}$,
 
-$
+$$$
 e^{ts} = e^{ts} \sum_{i=0}^{\infty}\frac{e^{t(-m + 2^i)}}{2^{i+1}}
-$
+$$$
 
-$
+$$$
 1 = \sum_{i=0}^{\infty}\frac{e^{t(-m + 2^i)}}{2^{i+1}}
-$
+$$$
 
-Multiply both sides by $e^{tm}$ 
+Multiply both sides by $e^{tm}$,
 
-$
+$$$
 e^{tm} =  \sum_{i=0}^{\infty}\frac{e^{2^it}}{2^{i+1}}
-$
+$$$
 
-Let $f_m(t) = e^{tm} - \sum_{i=0}^{\infty}\frac{e^{2^it}}{2^{i+1}}$,then the constant value we are interested in is the root of $f_m(t) = 0$. 
+Let $f_m(t) = e^{tm} - \sum_{i=0}^{\infty}\frac{e^{2^it}}{2^{i+1}}$,then $t_m$ is the root of $f_m(t) = 0$. 
 
-**Truncating $f_m(x)$ at finite terms and Finding the root $t_m$ using Newton’s method**
+**Truncating $f_m(x)$ at finite terms**
 
 $f_m’(t) = e^{tm} - \sum_{i=0}^{49}\frac{e^{2^it}}{2^{i+1}}$
 
+**Finding the root $t_m$ using Newton’s method**
+
 Once the root $t_m$ is found, we compute
 
-$p_m(s) = 1 - e^{t_ms}$
+$$$
+p_m(s) = 1 - e^{t_ms}
+$$$
